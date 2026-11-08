@@ -1,0 +1,13 @@
+# Top navigation. `external: true` opens in a new tab.
+- title: Home
+  url: /
+- title: Projects
+  url: /projects/
+- title: Research
+  url: /research/
+# Blog is hidden until the first real post. To show it, uncomment:
+# - title: Blog
+#   url: /blog/
+- title: CV
+  url: /files/clark_research_CV.pdf
+  external: true

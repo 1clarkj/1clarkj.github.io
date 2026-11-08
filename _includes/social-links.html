@@ -1,0 +1,7 @@
+<span class="quick-links">
+  <a href="{{ site.author.cv | relative_url }}" target="_blank" rel="noopener">CV</a><span class="divider">|</span>
+  <a href="mailto:{{ site.author.email }}">Email</a><span class="divider">|</span>
+  <a href="https://github.com/{{ site.author.github }}" rel="noopener">GitHub</a><span class="divider">|</span>
+  <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="noopener">LinkedIn</a>
+  {%- if site.author.huggingface -%}<span class="divider">|</span><a href="https://huggingface.co/{{ site.author.huggingface }}" rel="noopener">Hugging Face</a>{%- endif %}
+</span>

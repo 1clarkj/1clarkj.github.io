@@ -1,0 +1,63 @@
+# Site-wide settings. Restart `scripts/serve.sh` after editing this file.
+
+title: John Douglas Clark
+description: >-
+  MSc Robotics student at TU Delft and student researcher at the AMR Lab,
+  working on robot learning, reinforcement learning and world models.
+url: "https://1clarkj.github.io"
+baseurl: ""
+lang: en
+
+# Used by the header, homepage links and SEO tags.
+author:
+  name: John Douglas Clark
+  email: clark.john.douglas@gmail.com
+  github: 1clarkj
+  linkedin: jdc04
+  huggingface: 1clarkj
+  cv: /files/clark_research_CV.pdf
+  photo: /assets/img/profile.svg   # replace with /assets/img/profile.jpg when you have one
+
+# Markdown, maths and code highlighting
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+# Projects are a collection: one Markdown file per project in _projects/
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+permalink: /blog/:year/:title/
+
+defaults:
+  - scope: { path: "", type: projects }
+    values: { layout: project, math: true }
+  - scope: { path: "", type: posts }
+    values: { layout: post, math: true }
+  - scope: { path: "", type: drafts }
+    values: { layout: post, math: true }
+  - scope: { path: "" }
+    values: { layout: page }
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: blog/feed.xml
+
+exclude:
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - scripts
+  - templates

@@ -1,0 +1,20 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+lead: Robot learning, control and engineering projects. Each card links to a detailed write-up.
+---
+{%- assign featured = site.projects | where: 'featured', true | sort: 'order' -%}
+{%- assign others = site.projects | where_exp: 'p', 'p.featured != true' | sort: 'order' -%}
+
+<h2 class="section-heading">Robot learning &amp; control</h2>
+<div class="project-grid">
+  {%- for p in featured -%}{% include project-card.html project=p %}{%- endfor -%}
+</div>
+
+{%- if others.size > 0 -%}
+<h2 class="section-heading">Engineering</h2>
+<div class="project-grid">
+  {%- for p in others -%}{% include project-card.html project=p %}{%- endfor -%}
+</div>
+{%- endif -%}

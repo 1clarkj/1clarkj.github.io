@@ -1,0 +1,22 @@
+{%- assign p = include.project -%}
+<article class="project-card">
+  <a class="project-card__media" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    {%- if p.thumbnail -%}
+    <img src="{{ p.thumbnail | relative_url }}" alt="" loading="lazy" decoding="async">
+    {%- else -%}
+    <div class="media-placeholder"><span>{{ p.placeholder | default: 'Media coming soon' }}</span></div>
+    {%- endif -%}
+  </a>
+  <div class="project-card__body">
+    <h3 class="project-card__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <div class="project-card__meta">{{ p.org }}{% if p.org and p.date_label %} · {% endif %}{{ p.date_label }}</div>
+    <p class="project-card__desc">{{ p.description }}</p>
+    {%- if p.tech -%}
+    <ul class="tags">{% for t in p.tech %}<li>{{ t }}</li>{% endfor %}</ul>
+    {%- endif -%}
+    <div class="project-card__links">
+      <a href="{{ p.url | relative_url }}">Details</a>
+      {%- for l in p.links -%}<span class="divider">|</span><a href="{{ l.url }}" rel="noopener">{{ l.label }}</a>{%- endfor -%}
+    </div>
+  </div>
+</article>

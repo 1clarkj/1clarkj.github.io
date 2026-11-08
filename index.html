@@ -1,0 +1,97 @@
+---
+layout: default
+title: Home
+description: >-
+  John Douglas Clark: MSc Robotics student at TU Delft and student researcher at the AMR Lab,
+  working on robot learning, reinforcement learning and world models.
+---
+{%- comment -%}
+  The homepage only arranges sections. Content lives in:
+  _includes/bio.md, _data/news.yml, _projects/ (featured: true), _data/research.yml,
+  _data/experience.yml, _posts/, _data/education.yml
+{%- endcomment -%}
+
+<section class="hero" id="about">
+  <img class="hero__photo" src="{{ site.author.photo | relative_url }}" alt="Photo of {{ site.author.name }}" width="180" height="180">
+  <div class="hero__text">
+    <h1 class="hero__name">{{ site.author.name }}</h1>
+    <p class="hero__subtitle">MSc Robotics, TU Delft · Student Researcher, AMR Lab</p>
+    {% capture bio %}{% include bio.md %}{% endcapture %}
+    <div class="hero__bio">{{ bio | markdownify }}</div>
+    <p class="hero__links">{% include social-links.html %}</p>
+  </div>
+</section>
+
+<h2 class="section-heading" id="news">News</h2>
+<div class="news-box">
+  <ul class="news-list">
+    {%- for n in site.data.news -%}
+    <li><span class="news__date">{{ n.date }}</span><span class="news__text">{{ n.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span></li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+<h2 class="section-heading" id="projects">Selected Projects</h2>
+{%- assign featured = site.projects | where: 'featured', true | sort: 'order' -%}
+<div class="project-grid">
+  {%- for p in featured -%}{% include project-card.html project=p %}{%- endfor -%}
+</div>
+<p class="section-more"><a href="{{ '/projects/' | relative_url }}">All projects &rarr;</a></p>
+
+<h2 class="section-heading" id="research">Research</h2>
+{%- for r in site.data.research.current -%}
+<div class="card research-card">
+  <div class="research-card__label">Current research</div>
+  <div class="research-card__title"><a href="{{ r.url | relative_url }}">{{ r.title }}</a></div>
+  <div class="entry__meta">{{ r.meta }}{% if r.advisors %} · Supervised by {{ r.advisors }}{% endif %}</div>
+  <p>{{ r.summary }}</p>
+  <a href="{{ r.url | relative_url }}">Research direction &rarr;</a>
+</div>
+{%- endfor -%}
+{%- if site.data.research.publications.size > 0 -%}
+<h3 class="subsection-heading">Publications</h3>
+{% include publications.html %}
+{%- endif -%}
+
+<h2 class="section-heading" id="experience">Experience</h2>
+{%- for g in site.data.experience -%}
+<h3 class="subsection-heading">{{ g.group }}</h3>
+<ul class="entry-list">
+  {%- for e in g.items -%}
+  <li class="entry">
+    <div class="entry__meta">{{ e.dates }}{% if e.location %} · {{ e.location }}{% endif %}</div>
+    <div class="entry__title">{{ e.title }}, {{ e.org }}</div>
+    {%- if e.details -%}<div class="entry__details">{{ e.details }}</div>{%- endif -%}
+  </li>
+  {%- endfor -%}
+</ul>
+{%- endfor -%}
+
+{%- if site.posts.size > 0 -%}
+<h2 class="section-heading" id="blog">Blog</h2>
+{% assign recent = site.posts | slice: 0, 3 %}
+{% include post-list.html posts=recent %}
+<p class="section-more"><a href="{{ '/blog/' | relative_url }}">All posts &rarr;</a></p>
+{%- endif -%}
+
+<h2 class="section-heading" id="education">Education &amp; Achievements</h2>
+<ul class="entry-list">
+  {%- for d in site.data.education.degrees -%}
+  <li class="entry">
+    <div class="entry__meta">{{ d.dates }}</div>
+    <div class="entry__title">{{ d.degree }}, {{ d.school }}</div>
+    <ul class="entry__bullets">
+      {%- for x in d.details -%}<li>{{ x | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{%- endfor -%}
+    </ul>
+  </li>
+  {%- endfor -%}
+</ul>
+<div class="achievement-list">
+  {%- for a in site.data.education.achievements -%}
+  <div class="achievement-card">
+    <div class="entry__meta">{{ a.meta }}</div>
+    <div class="entry__title">{{ a.title }}</div>
+    <div class="entry__details">{{ a.details }}</div>
+  </div>
+  {%- endfor -%}
+</div>

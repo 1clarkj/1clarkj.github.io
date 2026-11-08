@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="page project">
+  <p class="breadcrumb"><a href="{{ '/projects/' | relative_url }}">&larr; Projects</a></p>
+  <h1 class="page-title">{{ page.title }}</h1>
+  {%- if page.description -%}<p class="page-lead">{{ page.description }}</p>{%- endif -%}
+
+  <dl class="project-meta">
+    {%- if page.date_label -%}<div><dt>Date</dt><dd>{{ page.date_label }}</dd></div>{%- endif -%}
+    {%- if page.org -%}<div><dt>Organisation</dt><dd>{{ page.org }}</dd></div>{%- endif -%}
+    {%- if page.role -%}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{%- endif -%}
+    {%- if page.tech -%}<div><dt>Technologies</dt><dd><ul class="tags">{% for t in page.tech %}<li>{{ t }}</li>{% endfor %}</ul></dd></div>{%- endif -%}
+  </dl>
+
+  {%- if page.links -%}
+  <p class="project-links">
+    {%- for l in page.links -%}{% unless forloop.first %}<span class="divider">|</span>{% endunless %}<a href="{{ l.url }}" rel="noopener">{{ l.label }}</a>{%- endfor -%}
+  </p>
+  {%- endif -%}
+
+  {% include media.html media=page.media label=page.placeholder class="media--hero" %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>

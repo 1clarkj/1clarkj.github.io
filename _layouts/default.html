@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
+  <main id="main" class="container">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script>
+    // Open links to other websites, and PDFs, in a new tab; links within this site stay in the same tab.
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var external = a.hostname && a.hostname !== location.hostname;
+      if (external || /\.pdf$/i.test(a.pathname)) { a.target = '_blank'; a.rel = 'noopener'; }
+    });
+  </script>
+</body>
+</html>

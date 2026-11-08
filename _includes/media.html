@@ -1,0 +1,38 @@
+{%- comment -%}
+  One figure: image / GIF, local MP4, YouTube, or a placeholder when there is no media yet.
+  Use either a front-matter hash:   {% include media.html media=page.media %}
+  or inline parameters in Markdown: {% include media.html type="youtube" src="VIDEO_ID" caption="..." %}
+  type:    image | gif | video | youtube   (anything else, or no src, gives a placeholder)
+  src:     path under the site (/assets/media/...) or the YouTube video id
+  poster:  (video) still image shown before playing
+  loop:    (video) true = autoplay, muted, looping clip without controls, like a GIF
+  caption, alt, label (placeholder text)
+{%- endcomment -%}
+{%- assign m = include.media -%}
+{%- assign type = include.type | default: m.type -%}
+{%- assign src = include.src | default: m.src -%}
+{%- assign caption = include.caption | default: m.caption -%}
+{%- assign poster = include.poster | default: m.poster -%}
+{%- assign loop = include.loop | default: m.loop -%}
+{%- assign alt = include.alt | default: m.alt | default: caption | default: page.title -%}
+{%- unless src -%}{%- assign type = 'placeholder' -%}{%- endunless -%}
+<figure class="media{% if include.class %} {{ include.class }}{% endif %}">
+  {%- case type -%}
+  {%- when 'youtube' -%}
+  <div class="media__embed">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ src }}" title="{{ alt | strip_html | escape }}" loading="lazy"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+  </div>
+  {%- when 'video' -%}
+  <video {% if loop %}autoplay loop muted playsinline{% else %}controls playsinline preload="metadata"{% endif %}{% if poster %} poster="{{ poster | relative_url }}"{% endif %}>
+    <source src="{{ src | relative_url }}" type="video/mp4">
+  </video>
+  {%- when 'image' or 'gif' -%}
+  <img src="{{ src | relative_url }}" alt="{{ alt | strip_html | escape }}" loading="lazy" decoding="async">
+  {%- else -%}
+  <div class="media-placeholder" role="img" aria-label="Media coming soon">
+    <span>{{ include.label | default: m.label | default: 'Video coming soon' }}</span>
+  </div>
+  {%- endcase -%}
+  {%- if caption -%}<figcaption>{{ caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{%- endif -%}
+</figure>

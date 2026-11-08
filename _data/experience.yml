@@ -1,0 +1,41 @@
+# Grouped on the homepage under each `group`. Newest first within a group.
+- group: Research
+  items:
+    - title: Student Researcher
+      org: AMR Lab, TU Delft
+      dates: 09/2026 – present
+      location: Delft, Netherlands
+      details: >-
+        Dynamic feasibility of learned world models for contact-rich aerial manipulation:
+        a JEPA-based world model in PyTorch, robot data collection, and simulation and
+        evaluation pipelines in Newton and MuJoCo.
+
+- group: Industry
+  items:
+    - title: Robotics and Real-Time Systems Intern
+      org: Keysight Technologies
+      dates: 07/2024 – 08/2026
+      location: Rotselaar, Belgium
+      details: >-
+        Built a real-time ball-balancing control testbed for the 6G-SANDBOX to measure how
+        network latency affects closed-loop control; ML-based hand tracking with C++
+        interfaces and a low-latency UDP pipeline.
+    - title: Vehicle Dynamics Engineer (part-time)
+      org: Formula Electric Belgium
+      dates: 09/2024 – 07/2025
+      location: Leuven, Belgium
+      details: >-
+        Torque-vectoring control for an electric Formula Student car: modelled in MATLAB,
+        implemented in C++, analysed from on-car ROS bags in Foxglove.
+
+- group: Teaching
+  items:
+    - title: Teaching Assistant, Planning & Decision Making
+      org: TU Delft
+      dates: from 11/2026
+      location: Delft, Netherlands
+      details: MDPs, reinforcement learning, planning algorithms and MPC for MSc Robotics students.
+    - title: Student Assistant, Electricity and AC Grids
+      org: KU Leuven
+      dates: 01/2024 – 07/2025
+      location: Leuven, Belgium

@@ -1,0 +1,15 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+published: false   # hidden until the first real post; delete this line to show the blog
+lead: >-
+  Technical notes on robot learning, world models, reinforcement learning and control:
+  experiments, implementation details and research reflections.
+---
+{%- assign by_year = site.posts | group_by_exp: 'p', "p.date | date: '%Y'" -%}
+{%- for y in by_year -%}
+<h2 class="section-heading">{{ y.name }}</h2>
+{% include post-list.html posts=y.items %}
+{%- endfor -%}
+<p class="section-more"><a href="{{ '/blog/feed.xml' | relative_url }}">RSS feed</a></p>

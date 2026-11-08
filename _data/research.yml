@@ -1,0 +1,19 @@
+# Current research shown on the homepage and the Research page.
+current:
+  - title: Dynamic Feasibility of Embodiment-Agnostic World Models for Embodiment-Specific Robots
+    meta: MSc thesis · AMR Lab, TU Delft · 2026 – 2027
+    advisors: Sihao Sun and Javier Alonso-Mora
+    summary: >-
+      Can a world model trained on generic, end-effector-centric manipulation data plan
+      for a robot it has never seen, such as an underactuated aerial manipulator, if the
+      robot's own dynamics and controller check each plan for feasibility? Case study:
+      contact-rich aerial manipulation such as valve rotation.
+    url: /research/
+    image:   # e.g. /assets/media/aerial/teaser.jpg
+
+# Papers, preprints, posters. Empty for now; the section stays hidden until filled.
+# - title: ...
+#   authors: J. D. Clark, ...
+#   venue: Conference / arXiv, 2027
+#   links: { pdf: ..., code: ..., video: ... }
+publications: []

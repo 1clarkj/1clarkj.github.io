@@ -1,0 +1,12 @@
+<ol class="pub-list">
+  {%- for pub in site.data.research.publications -%}
+  <li class="pub-item">
+    <span class="pub-title">{{ pub.title }}</span><br>
+    <span class="pub-authors">{{ pub.authors | replace: 'J. D. Clark', '<strong>J. D. Clark</strong>' }}</span><br>
+    <span class="pub-venue">{{ pub.venue }}</span>
+    {%- if pub.links -%}
+    <span class="pub-links">{% for l in pub.links %}<a href="{{ l[1] }}">[{{ l[0] }}]</a> {% endfor %}</span>
+    {%- endif -%}
+  </li>
+  {%- endfor -%}
+</ol>

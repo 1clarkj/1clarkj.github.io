@@ -1,0 +1,26 @@
+degrees:
+  - degree: MSc Robotics
+    school: TU Delft
+    dates: 2025 – 07/2027 (expected)
+    details:
+      - >-
+        Thesis: *Dynamic Feasibility of Embodiment-Agnostic World Models for
+        Embodiment-Specific Robots*, with an aerial manipulator as case study.
+        Supervised by Sihao Sun and Javier Alonso-Mora.
+      - Current average 9/10, on track for Cum Laude.
+      - >-
+        Deep Reinforcement Learning (10/10), Robot Dynamics and Control (9.5/10),
+        Machine Learning for Robotics (9/10).
+  - degree: BSc Electromechanical Engineering
+    school: KU Leuven
+    dates: 2022 – 2025
+    details:
+      - Valedictorian, ranked 1/360. Magna Cum Laude (83.4%).
+
+achievements:
+  - title: Valedictorian, BSc Electromechanical Engineering
+    meta: 2025 · KU Leuven
+    details: Ranked 1st of 360 students; graduated Magna Cum Laude.
+  - title: Teaching Assistant selection
+    meta: 2026 · TU Delft
+    details: Selected to teach MSc Robotics students in Planning & Decision Making.

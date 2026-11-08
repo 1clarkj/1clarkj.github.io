@@ -1,0 +1,17 @@
+<header class="masthead">
+  <nav class="masthead__inner" aria-label="Main">
+    <a class="masthead__title" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+    <ul class="masthead__links">
+      {%- for item in site.data.navigation -%}
+        {%- assign active = false -%}
+        {%- if item.url == '/' -%}
+          {%- if page.url == '/' -%}{%- assign active = true -%}{%- endif -%}
+        {%- elsif page.url contains item.url -%}
+          {%- assign active = true -%}
+        {%- endif -%}
+        {%- if item.url == '/blog/' and page.collection == 'posts' -%}{%- assign active = true -%}{%- endif -%}
+      <li><a href="{{ item.url | relative_url }}"{% if active %} class="active" aria-current="page"{% endif %}{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+</header>

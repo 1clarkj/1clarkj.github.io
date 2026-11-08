@@ -1,0 +1,23 @@
+# Newest first. `text` is Markdown, so links work: [label](/projects/...)
+- date: Nov 2026
+  text: Starting as a Teaching Assistant for *Planning & Decision Making* at TU Delft.
+- date: Oct 2026
+  text: >-
+    Released [MimicVLA](/projects/mimicvla/): teaching a simulated Franka Panda USB
+    insertion from iPhone videos of my own hand, by fine-tuning SmolVLA.
+- date: Sep 2026
+  text: >-
+    Joined the AMR Lab at TU Delft as a student researcher, working on
+    [world models for aerial manipulation](/research/).
+- date: May 2026
+  text: >-
+    Took part in RoboHack at EPFL, deploying person-following and stand-up assistance
+    on the [AgiBot X2 humanoid](/projects/agibot-x2-humanoid/).
+- date: 2026
+  text: >-
+    Competed in the Intrinsic AI for Industry Challenge with a
+    [vision-based insertion policy](/projects/vision-based-insertion/).
+- date: 2025
+  text: >-
+    Graduated from KU Leuven (BSc Electromechanical Engineering) as valedictorian,
+    ranked 1/360, and started the MSc Robotics at TU Delft.
