@@ -16,7 +16,7 @@ author:
   linkedin: jdc04
   huggingface: 1clarkj
   cv: /files/clark_research_CV.pdf
-  photo: /assets/img/profile.svg   # replace with /assets/img/profile.jpg when you have one
+  photo: /assets/img/profile.jpg
 
 # Markdown, maths and code highlighting
 markdown: kramdown

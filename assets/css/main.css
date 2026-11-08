@@ -169,7 +169,8 @@ strong { font-weight: 650; }
 
 /* Figures */
 .media { margin: 1.4rem 0; }
-.media img, .media video { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--card-border); background: var(--card); }
+.media img, .media video { display: block; width: auto; max-width: 100%; max-height: min(80vh, 720px); height: auto; margin: 0 auto; border-radius: 10px; border: 1px solid var(--card-border); background: var(--card); }
+.media--narrow img, .media--narrow video { max-height: min(60vh, 520px); }
 .media .media-placeholder { height: auto; min-height: 0; border-radius: 10px; border: 1px solid var(--card-border); }
 .media figcaption { font-size: 0.88rem; color: var(--muted); margin-top: 0.5rem; text-align: center; }
 .media__embed { position: relative; aspect-ratio: 16 / 9; }

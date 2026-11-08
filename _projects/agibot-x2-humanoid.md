@@ -9,7 +9,11 @@ role: Hackathon team
 tech: [ROS 2, YOLOv8, Stereo depth, Whole-body control, AgiBot X2]
 featured: true
 order: 4
-placeholder: Humanoid · person following
+thumbnail: /assets/media/humanoid/thumb.gif
+media:
+  type: video
+  src: /assets/media/humanoid/stand-up-assist.mp4
+  caption: The AgiBot X2 autonomously helping a person stand up at RoboHack, EPFL.
 links:
   - label: Code
     url: https://github.com/1clarkj/Humanoid_agibot-x2_RoboHack2026
@@ -26,6 +30,10 @@ The code is split into two ROS 2 packages:
 - **Perception (`robot_vision`).** Real-time stereo person detection with YOLOv8 and per-person stereo depth, publishing the target person's position.
 - **Motion (`robot_motion`).** Head tracking toward the target, a locomotion supervisor that walks toward the person and stops at a set distance, and an arm pose triggered on arrival.
 
+{% include media.html type="image" src="/assets/media/humanoid/agibot-x2.jpg" alt="The AgiBot X2 humanoid on its support frame" caption="The AgiBot X2 on its support frame during development." class="media--narrow" %}
+
 ## Challenges
 
 Integrating perception with whole-body control on an early-stage stack meant troubleshooting the robot software and iterating on behaviours directly on the physical humanoid.
+
+{% include media.html type="image" src="/assets/media/humanoid/team.jpg" alt="The RoboHack team with the AgiBot X2" caption="The team with the robot at RoboHack, EPFL." %}

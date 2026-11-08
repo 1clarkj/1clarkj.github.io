@@ -43,7 +43,7 @@ lead: >-
 ## Related work
 
 - [MimicVLA](/projects/mimicvla/): fine-tuning a vision-language-action model on demonstrations retargeted from phone videos of my own hand.
-- [Vision-based robotic insertion](/projects/vision-based-insertion/): RL experts distilled into a vision-based policy with a DINOv2 encoder.
+- [Multi-camera perception for cable insertion](/projects/vision-based-insertion/): segmentation and keypoint model trained for the Intrinsic AI for Industry Challenge.
 
 ## Broader interests
 
