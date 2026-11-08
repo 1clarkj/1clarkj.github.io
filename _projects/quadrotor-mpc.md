@@ -7,8 +7,9 @@ org: TU Delft course project
 date_label: 2026
 role: Team project
 tech: [MPC, CVXPY, OSQP, RRT*, PID, PyBullet, gym-pybullet-drones]
+category: learning
 featured: true
-order: 6
+order: 4
 placeholder: Quadrotor · MPC tracking
 links:
   - label: Code

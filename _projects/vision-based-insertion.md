@@ -8,8 +8,9 @@ org: Intrinsic AI for Industry Challenge
 date_label: 2026
 role: Team project · perception model training, policy design
 tech: [PyTorch, ConvNeXt (DINOv3), FPN, Isaac Sim, Gazebo, PPO, Imitation learning]
+category: learning
 featured: true
-order: 3
+order: 2
 thumbnail: /assets/media/insertion/thumb.gif
 media:
   type: image
@@ -23,7 +24,7 @@ media:
 
 ## Overview
 
-The challenge task is cable insertion: a robot arm must insert a cable's SFP or SC plug into the matching port on a task board. Our team's approach separated **perception** from **control**. I trained the perception model, and contributed to the design of the policy pipeline.
+The challenge task is cable insertion: a robot arm must insert a cable's SFP or SC plug into the matching port on a task board. Our team's approach separated **perception** from **control**. I trained the perception model and designed the policy pipeline with the team.
 
 ## Perception model
 
@@ -63,7 +64,7 @@ On all **3,006 held-out validation views**, the model reaches **88.5% mean IoU**
 
 ## Policy pipeline
 
-The control side, which I contributed to designing, follows a teacher–student scheme:
+I designed the control side with the team as a teacher–student scheme:
 
 1. **Privileged experts.** PPO policies trained in Isaac Lab with access to the simulator's ground-truth state.
 2. **Imitation learning.** Expert rollouts become demonstrations for a student policy.

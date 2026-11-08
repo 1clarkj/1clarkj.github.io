@@ -7,6 +7,8 @@ org: Keysight Technologies · Rotselaar
 date_label: 07/2024 – 08/2026
 role: Robotics and Real-Time Systems Intern
 tech: [C++, UDP, Real-time control, Hand tracking, Edge computing]
+category: engineering
+featured: false
 order: 10
 placeholder: Ball-balancing testbed
 ---

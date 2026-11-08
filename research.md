@@ -1,7 +1,6 @@
 ---
 title: Research
 permalink: /research/
-math: true
 lead: >-
   Robot learning and embodied AI: methods that let robots acquire, adapt and generalise
   complex behaviour, and that can run on real robotic systems.
@@ -12,33 +11,13 @@ lead: >-
 ### World models for generalisable robotic manipulation
 {: .research-title}
 
-<p class="entry__meta">MSc research assignment &amp; thesis · AMR Lab, TU Delft · 2026 – 2027 · Supervised by Sihao Sun and Javier Alonso-Mora</p>
+<p class="entry__meta">MSc thesis · AMR Lab, TU Delft · 2026 – 2027 · Supervised by Sihao Sun and Javier Alonso-Mora</p>
 
-{% include media.html label="Aerial manipulation · world-model planning" caption="Experiment media will be added as the project progresses." %}
+Robot learning can now produce manipulation skills that generalise across tasks, but transferring them across *embodiments*, to robots with different physical and dynamic constraints, remains hard. My thesis studies whether **embodiment-agnostic world models** can be used to plan for **embodiment-specific robots**, taking an aerial manipulator performing contact-rich manipulation as the case study.
 
-**Motivation.** Robot learning can now produce manipulation skills that generalise across tasks, but transferring them across *embodiments* remains hard, especially when the target robot has different physical and dynamic constraints. Aerial manipulation is a demanding test case:
+Aerial manipulation is a demanding test: contact and arm motion affect the flight dynamics, the platforms are typically underactuated, and demonstrations are expensive to collect. That makes it a good setting to ask how much manipulation knowledge can be reused across very different robots.
 
-- **Dynamic constraints.** End-effector motion and contact affect whole-body dynamics, flight stability and control feasibility, and common aerial platforms are underactuated.
-- **Data collection.** Aerial manipulation demonstrations are expensive, slow and technically difficult to obtain.
-- **Generalisation.** Embodiment-specific training or adaptation limits how much manipulation knowledge can be reused across platforms.
-
-**Objective.** I am investigating whether *embodiment-agnostic* world models can learn transferable representations of manipulation dynamics, so that one model supports planning across robots while each robot's own physical constraints are respected. The experimental setting is contact-rich aerial manipulation, with valve rotation as a representative task.
-
-**Approach.** A hierarchical planner combines an embodiment-agnostic predictive model with embodiment-specific feasibility feedback:
-
-1. **Action-conditioned world models.** JEPA-based predictive models (including LeWorldModel) learn compact latent dynamics. Future latent states are predicted from *end-effector* action sequences rather than embodiment-specific actuator commands. I am comparing visual and state-based observations, including ego-motion and wrist-camera viewpoints.
-2. **Sampling-based latent planning.** The Cross-Entropy Method (CEM; MPPI as an alternative) samples and refines end-effector trajectories, rolls them out through the world model, and scores predicted outcomes against a task-specific latent objective, replanning in a receding horizon.
-3. **Controller-based physical grounding.** Each candidate trajectory is evaluated by a lower-level geometric controller or nonlinear MPC. The resulting tracking cost, control effort and constraint violations indicate whether the robot can actually execute it. Task and feasibility costs are combined to guide the search over end-effector trajectories $$\tau$$:
-
-   $$J(\tau) = J_{\text{task}}(\tau) + J_{\text{feasibility}}(\tau).$$
-
-   The world model is kept fixed across embodiments and only the dynamics and control component changes, without fine-tuning on aerial demonstrations.
-
-**Open questions.**
-
-- *Representation and transfer:* do latent predictions generalise across tasks and under strong camera ego-motion?
-- *Feasibility metrics:* can controller-derived costs separate feasible, marginal and infeasible trajectories cheaply?
-- *Multi-rate integration:* how should slow, long-horizon world-model planning interact with fast, short-horizon control?
+More detail will follow as results are published.
 
 ## Related work
 

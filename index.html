@@ -12,7 +12,7 @@ description: >-
 {%- endcomment -%}
 
 <section class="hero" id="about">
-  <img class="hero__photo" src="{{ site.author.photo | relative_url }}" alt="Photo of {{ site.author.name }}" width="180" height="180">
+  <img class="hero__photo" src="{{ site.author.photo | relative_url }}" alt="Photo of {{ site.author.name }}" width="200" height="250">
   <div class="hero__text">
     <h1 class="hero__name">{{ site.author.name }}</h1>
     <p class="hero__subtitle">MSc Robotics, TU Delft · Student Researcher, AMR Lab</p>
@@ -31,13 +31,6 @@ description: >-
   </ul>
 </div>
 
-<h2 class="section-heading" id="projects">Selected Projects</h2>
-{%- assign featured = site.projects | where: 'featured', true | sort: 'order' -%}
-<div class="project-grid">
-  {%- for p in featured -%}{% include project-card.html project=p %}{%- endfor -%}
-</div>
-<p class="section-more"><a href="{{ '/projects/' | relative_url }}">All projects &rarr;</a></p>
-
 <h2 class="section-heading" id="research">Research</h2>
 {%- for r in site.data.research.current -%}
 <div class="card research-card">
@@ -52,6 +45,13 @@ description: >-
 <h3 class="subsection-heading">Publications</h3>
 {% include publications.html %}
 {%- endif -%}
+
+<h2 class="section-heading" id="projects">Selected Projects</h2>
+{%- assign featured = site.projects | where: 'featured', true | sort: 'order' -%}
+<div class="project-grid">
+  {%- for p in featured -%}{% include project-card.html project=p %}{%- endfor -%}
+</div>
+<p class="section-more"><a href="{{ '/projects/' | relative_url }}">All projects &rarr;</a></p>
 
 <h2 class="section-heading" id="experience">Experience</h2>
 {%- for g in site.data.experience -%}

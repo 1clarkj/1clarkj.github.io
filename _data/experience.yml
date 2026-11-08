@@ -7,8 +7,8 @@
       location: Delft, Netherlands
       details: >-
         Dynamic feasibility of learned world models for contact-rich aerial manipulation:
-        a JEPA-based world model in PyTorch, robot data collection, and simulation and
-        evaluation pipelines in Newton and MuJoCo.
+        world models in PyTorch (including JEPA-based architectures), robot data collection,
+        and simulation and evaluation pipelines in Newton and MuJoCo.
 
 - group: Industry
   items:

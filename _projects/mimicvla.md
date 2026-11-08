@@ -7,6 +7,7 @@ description: >-
 org: Personal research project
 date_label: 2026
 tech: [SmolVLA, LeRobot, MuJoCo, ArUco tracking, PyTorch, SAC (DSRL)]
+category: learning
 featured: true
 order: 1
 thumbnail: /assets/media/mimicvla/unseen_start_222751.gif

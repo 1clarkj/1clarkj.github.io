@@ -7,6 +7,8 @@ org: Formula Electric Belgium · Leuven
 date_label: 09/2024 – 07/2025
 role: Vehicle Dynamics Engineer (part-time)
 tech: [MATLAB, C++, Vehicle dynamics, ROS bags, Foxglove]
+category: engineering
+featured: false
 order: 11
 placeholder: Torque vectoring
 ---

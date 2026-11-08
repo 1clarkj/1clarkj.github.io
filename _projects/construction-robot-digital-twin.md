@@ -6,6 +6,8 @@ description: >-
 org: Leuven, Belgium
 date_label: 2025
 tech: [Siemens NX, Kinematics, Mechanical design, Electrical schematics, DIN / ISO / EN]
+category: engineering
+featured: false
 order: 12
 placeholder: Construction robot · digital twin
 ---

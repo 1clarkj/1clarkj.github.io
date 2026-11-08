@@ -4,10 +4,9 @@ current:
     meta: MSc thesis · AMR Lab, TU Delft · 2026 – 2027
     advisors: Sihao Sun and Javier Alonso-Mora
     summary: >-
-      Can a world model trained on generic, end-effector-centric manipulation data plan
-      for a robot it has never seen, such as an underactuated aerial manipulator, if the
-      robot's own dynamics and controller check each plan for feasibility? Case study:
-      contact-rich aerial manipulation such as valve rotation.
+      Can world models trained independently of a robot's embodiment be used to plan for a
+      specific robot with very different dynamics? Case study: contact-rich manipulation
+      with an aerial manipulator.
     url: /research/
     image:   # e.g. /assets/media/aerial/teaser.jpg
 

@@ -6,7 +6,8 @@ description: >-
 org: Personal project
 date_label: 2026 – present
 tech: [PyTorch, Gymnasium, PPO, SAC, DQN, Actor–Critic]
-featured: true
+category: learning
+featured: false
 order: 5
 placeholder: Deep RL · learning curves
 ---
