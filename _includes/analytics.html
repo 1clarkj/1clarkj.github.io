@@ -19,8 +19,13 @@
   var ref = null;
   try {
     ref = new URLSearchParams(location.search).get('ref');
-    if (ref) sessionStorage.setItem('gc_ref', ref);
-    else ref = sessionStorage.getItem('gc_ref');
+    if (ref) {
+      sessionStorage.setItem('gc_ref', ref);
+      // Hide the tag from the address bar, so a copied or shared URL carries no ref
+      history.replaceState(null, '', location.pathname + location.hash);
+    } else {
+      ref = sessionStorage.getItem('gc_ref');
+    }
   } catch (e) {}
 
   function send(vars) {

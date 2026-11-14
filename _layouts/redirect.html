@@ -1,0 +1,23 @@
+<!doctype html>
+{%- comment -%}
+  Short link that forwards to the homepage with a ?ref= tag, so a profile can show a clean
+  URL (e.g. 1clarkj.github.io/li) while GoatCounter still sees where the visit came from.
+  No analytics here: the visit is counted once, on the page it lands on.
+  The Open Graph tags give LinkedIn and X a proper preview card for the short link.
+{%- endcomment -%}
+{%- assign target = '/?ref=' | append: page.ref | relative_url -%}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ site.title }}</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ site.url }}/">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description | strip }}">
+  <meta property="og:url" content="{{ site.url }}/">
+  <meta property="og:image" content="{{ site.url }}{{ site.author.photo }}">
+  <meta http-equiv="refresh" content="0; url={{ target }}">
+  <script>location.replace('{{ target }}');</script>
+</head>
+<body><p><a href="{{ target }}">{{ site.title }}</a></p></body>
+</html>
