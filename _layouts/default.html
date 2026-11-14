@@ -17,5 +17,6 @@
       if (external || /\.pdf$/i.test(a.pathname)) { a.target = '_blank'; a.rel = 'noopener'; }
     });
   </script>
+  {%- if jekyll.environment == 'production' %}{% include analytics.html %}{% endif %}
 </body>
 </html>

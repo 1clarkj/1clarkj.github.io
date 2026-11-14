@@ -1,0 +1,67 @@
+{%- comment -%}
+  GoatCounter analytics (https://1clarkj.goatcounter.com): no cookies, no personal data.
+  Only included in production builds, so local previews are never counted.
+
+  - Page views: counted by hand (no_onload) so the visit's source can be kept for the
+    whole visit. A link like /?ref=rai (one ref per CV or profile) is stored in
+    sessionStorage and sent as the referrer of every page opened in that visit, so the
+    dashboard can show which pages the reader of one application looked at.
+  - Events: clicks on outbound links, the CV download and email, and the first play of
+    each video, recorded as GoatCounter events named "click: <url>" / "video: <file>".
+  - To stop counting your own visits: open https://1clarkj.github.io/#toggle-goatcounter
+    once in each browser you use.
+{%- endcomment -%}
+<script>window.goatcounter = { no_onload: true };</script>
+<script data-goatcounter="https://1clarkj.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+(function () {
+  // -- the visit's source: ?ref= on the landing page, remembered for the rest of the visit
+  var ref = null;
+  try {
+    ref = new URLSearchParams(location.search).get('ref');
+    if (ref) sessionStorage.setItem('gc_ref', ref);
+    else ref = sessionStorage.getItem('gc_ref');
+  } catch (e) {}
+
+  function send(vars) {
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count(vars);
+  }
+  function event(name) {
+    send({ path: name, title: ref ? 'ref=' + ref : '', event: true });
+  }
+
+  // -- wait for count.js (loaded async), then count this page view
+  var tries = 0;
+  var wait = setInterval(function () {
+    if (window.goatcounter && window.goatcounter.count) {
+      clearInterval(wait);
+      var vars = { path: location.pathname };
+      if (ref) vars.referrer = ref;
+      send(vars);
+    } else if (++tries > 50) {
+      clearInterval(wait);  // blocked by an ad blocker: give up quietly
+    }
+  }, 100);
+
+  // -- clicks on links that leave the page: other sites, the CV, email
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    var external = a.host && a.host !== location.host;
+    if (external || /\.pdf$/i.test(href) || href.indexOf('mailto:') === 0) {
+      event('click: ' + (href.indexOf('mailto:') === 0 ? 'email' : href));
+    }
+  }, true);
+
+  // -- first play of each video
+  document.addEventListener('play', function (e) {
+    var v = e.target;
+    // Autoplaying loops start by themselves, so they say nothing about the reader
+    if (v.tagName !== 'VIDEO' || v.autoplay || v.dataset.gcPlayed) return;
+    v.dataset.gcPlayed = '1';
+    var src = v.currentSrc || (v.querySelector('source') || {}).src || '';
+    event('video: ' + src.split('/').slice(-2).join('/'));
+  }, true);
+})();
+</script>

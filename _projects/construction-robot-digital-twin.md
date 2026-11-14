@@ -36,6 +36,8 @@ The house is a dome with a sunroof and a door opening, printed layer by layer as
 - **Digital twin.** I built the elevation module's part of the digital twin in NX Mechatronics Concept Designer. The simulation confirmed that one actuator cannot carry the load alone, and showed force spikes at every change in position that damping did not remove, so the recommendation was acceleration control through a variable-frequency drive.
 - **Electrical design and safety.** I drew the complete electrical diagram set in SEE Electrical, and took part in the risk assessment and safety functions (EN ISO 12100, EN ISO 13849).
 
+{% include media.html type="image" src="/assets/media/construction-robot/see-main-circuits.png" alt="Electrical schematic of the main actuator circuits: mains bus, protection, line and motor modules, and the servo motors of the three axes" caption="One sheet of the electrical diagram set (SEE Electrical): the main circuits of the actuators, from the mains bus through protection and the Siemens S120 line and motor modules to the servo motors of each axis." %}
+
 <div class="media-row">
 {% include media.html type="video" src="/assets/media/construction-robot/motion-simulation-full.mp4" aspect="2.2424" caption="Motion simulation of the full machine in Siemens NX (2× speed)." %}
 {% include media.html type="image" src="/assets/media/construction-robot/m2-forces-digital-twin.png" aspect="0.7719" alt="Force on the linear actuator over time from the digital twin" caption="Actuator forces from the digital twin: the spikes appear at each change in position." %}
