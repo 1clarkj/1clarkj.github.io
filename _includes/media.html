@@ -7,6 +7,7 @@
   poster:  (video) still image shown before playing
   loop:    (video) true = autoplay, muted, looping clip without controls, like a GIF
   caption, alt, label (placeholder text)
+  aspect:  (inside a media-row) width / height of the media, so figures in a row share one height uncropped
 {%- endcomment -%}
 {%- assign m = include.media -%}
 {%- assign type = include.type | default: m.type -%}
@@ -16,7 +17,7 @@
 {%- assign loop = include.loop | default: m.loop -%}
 {%- assign alt = include.alt | default: m.alt | default: caption | default: page.title -%}
 {%- unless src -%}{%- assign type = 'placeholder' -%}{%- endunless -%}
-<figure class="media{% if include.class %} {{ include.class }}{% endif %}">
+<figure class="media{% if include.class %} {{ include.class }}{% endif %}"{% if include.aspect %} style="--aspect: {{ include.aspect }}"{% endif %}>
   {%- case type -%}
   {%- when 'youtube' -%}
   <div class="media__embed">

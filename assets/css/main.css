@@ -171,10 +171,11 @@ strong { font-weight: 650; }
 .media { margin: 1.4rem 0; }
 .media img, .media video { display: block; width: auto; max-width: 100%; max-height: min(65vh, 480px); height: auto; margin: 0 auto; border-radius: 10px; border: 1px solid var(--card-border); background: var(--card); }
 .media--hero img, .media--hero video { max-height: min(70vh, 520px); }
-/* Two figures side by side, cropped to the same height */
-.media-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.4rem 0; align-items: start; }
-.media-row .media { margin: 0; }
-.media-row .media img { width: 100%; height: 320px; max-height: none; object-fit: cover; }
+/* Figures side by side, never cropped: each figure's width is proportional to its
+   aspect ratio (--aspect, set by media.html), so all figures in the row share one height */
+.media-row { display: flex; gap: 1rem; margin: 1.4rem 0; align-items: flex-start; }
+.media-row .media { margin: 0; flex: var(--aspect, 1) 1 0; min-width: 0; }
+.media-row .media img, .media-row .media video { width: 100%; height: auto; max-height: none; }
 .media .media-placeholder { height: auto; min-height: 0; aspect-ratio: 4 / 1; border-radius: 10px; border: 1px solid var(--card-border); }
 .media figcaption { font-size: 0.88rem; color: var(--muted); margin-top: 0.5rem; text-align: center; }
 .media__embed { position: relative; aspect-ratio: 16 / 9; }
@@ -200,9 +201,11 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
   .hero__photo { width: 168px; height: 210px; }
   .hero__name { font-size: 1.7rem; text-align: center; }
   .hero__subtitle, .hero__links { text-align: center; }
-  .project-grid, .achievement-list, .media-row { grid-template-columns: 1fr; }
-  .media-row .media img { height: auto; }
+  .project-grid, .achievement-list { grid-template-columns: 1fr; }
+  .media-row { flex-direction: column; }
+  .media-row .media { flex: none; width: 100%; }
   .news-list li { grid-template-columns: 1fr; gap: 0; }
   .page-title { font-size: 1.6rem; }
   .masthead { position: static; }
 }
+.entry__more { font-weight: 600; white-space: nowrap; }

@@ -14,7 +14,9 @@ thumbnail: /assets/media/humanoid/thumb.gif
 media:
   type: video
   src: /assets/media/humanoid/stand-up-assist.mp4
-  caption: The AgiBot X2 autonomously helping a person stand up at RoboHack, EPFL.
+  caption: >-
+    The AgiBot X2 autonomously helping a person stand up at RoboHack, EPFL, followed by
+    the team.
 links:
   - label: Code
     url: https://github.com/1clarkj/Humanoid_agibot-x2_RoboHack2026
@@ -36,6 +38,6 @@ The code is split into two ROS 2 packages:
 Integrating perception with whole-body control on an early-stage stack meant troubleshooting the robot software and iterating on behaviours directly on the physical humanoid.
 
 <div class="media-row">
-{% include media.html type="image" src="/assets/media/humanoid/agibot-x2.jpg" alt="The AgiBot X2 humanoid on its support frame" caption="The AgiBot X2 during development." %}
-{% include media.html type="image" src="/assets/media/humanoid/team.jpg" alt="The RoboHack team with the AgiBot X2" caption="The team at RoboHack, EPFL." %}
+{% include media.html type="image" src="/assets/media/humanoid/agibot-x2.jpg" aspect="0.75" alt="The AgiBot X2 humanoid on its support frame" caption="The AgiBot X2 during development." %}
+{% include media.html type="image" src="/assets/media/humanoid/team.jpg" aspect="1.3333" alt="The RoboHack team with the AgiBot X2" caption="The team at RoboHack, EPFL." %}
 </div>

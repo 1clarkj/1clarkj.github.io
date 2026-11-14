@@ -10,7 +10,12 @@ tech: [MATLAB, C++, Vehicle dynamics, ROS bags, Foxglove]
 category: engineering
 featured: false
 order: 11
-placeholder: Torque vectoring
+thumbnail: /assets/media/formula-electric/thumb.jpg
+media:
+  type: image
+  src: /assets/media/formula-electric/car.jpg
+  alt: The Formula Electric Belgium race car, number 22, at speed on track
+  caption: "The team's car on track. Photo: Formula Electric Belgium."
 ---
 
 ## Technical approach

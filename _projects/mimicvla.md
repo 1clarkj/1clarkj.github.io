@@ -10,7 +10,7 @@ tech: [SmolVLA, LeRobot, MuJoCo, ArUco tracking, PyTorch, SAC (DSRL)]
 category: learning
 featured: true
 order: 1
-thumbnail: /assets/media/mimicvla/unseen_start_222751.gif
+thumbnail: /assets/media/mimicvla/thumb.gif
 media:
   type: video
   src: /assets/media/mimicvla/unseen_start_222751.mp4

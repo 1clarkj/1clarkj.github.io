@@ -8,7 +8,7 @@ date_label: 2026 – present
 tech: [PyTorch, Gymnasium, PPO, SAC, DQN, Actor–Critic]
 category: learning
 featured: false
-order: 5
+order: 6
 placeholder: Deep RL · learning curves
 ---
 

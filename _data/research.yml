@@ -2,7 +2,8 @@
 current:
   - title: Dynamic Feasibility of Embodiment-Agnostic World Models for Embodiment-Specific Robots
     meta: MSc thesis · AMR Lab, TU Delft · 2026 – 2027
-    advisors: Sihao Sun and Javier Alonso-Mora
+    advisors: >-
+      <a href="https://sihaosun.github.io/">Sihao Sun</a> and <a href="https://autonomousrobots.nl/people/">Javier Alonso-Mora</a>
     summary: >-
       Can world models trained independently of a robot's embodiment be used to plan for a
       specific robot with very different dynamics? Case study: contact-rich manipulation
